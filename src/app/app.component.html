@@ -1,11 +1,43 @@
-<mat-form-field>
-  <mat-label>Select an year</mat-label>
-  <mat-select
-    [(ngModel)]="selectedYear"
-    (selectionChange)="filterByYear(selectedYear)"
-  >
-    <mat-option *ngFor="let year of uniqueYears" [value]="year">
-      {{ year }}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+
+<mat-card style="background-color: #9c27b0; border-radius: 0; color: white;">
+  <mat-card-content>
+    <div style="font-weight: bold; font-size: 18px;">ABC</div>
+    <span>CO</span>
+  </mat-card-content>
+</mat-card>
+
+<div class="container">
+
+  <div class="filter">
+    <mat-form-field>
+      <mat-label>Select an year</mat-label>
+      <mat-select [(ngModel)]="selectedYear" (selectionChange)="filterByYear(selectedYear)" >
+        <mat-option *ngFor="let year of uniqueYears" [value]="year"> {{ year }} </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
+  <div class="visual-container">
+
+    <div class="widget">
+      <div class="total">
+        <div class="title" style="flex: 1;">World Population ({{ selectedYear }})</div>
+                                                                                                                                                          
+        <div class="total_value">{{ totalPopulation }}</div>
+      </div>
+      <div class="trend">
+        <div class="title">Population Growth</div>
+        <div id="growth_trend" style="height: 100%; width: 100%;">
+
+        </div>
+      </div>
+    </div>
+    <div class="scatter_container">
+      <div class="title">Population Growth vs Density Correlation </div>
+      <div id="scatter" style="height: 300px; width: inherit;">
+
+      </div>
+    </div>
+  </div>
+</div>
