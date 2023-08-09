@@ -1,0 +1,11 @@
+<mat-form-field>
+  <mat-label>Select an year</mat-label>
+  <mat-select
+    [(ngModel)]="selectedYear"
+    (selectionChange)="filterByYear(selectedYear)"
+  >
+    <mat-option *ngFor="let year of uniqueYears" [value]="year">
+      {{ year }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
